@@ -1,17 +1,18 @@
 #include <stdio.h>
-#include <stdlib.h>
+#include <stdlib.h>     //for exit() 
 int main()
 {
-    char c[1000]
+    char ch[1000]
     FILE *fptr;
     if ((fptr = fopen("program.txt", "r")) == NULL)
     {
-        print("Error! opening file")
+        print("Error! opening file")  // program exits if file pointer returns NULL
         exit(1)      
     }
    
-    scanf(fptr,"%[^\n]", c);
-    printf("Data from the file:\n%s", c);
+   // reads text untill newline is encountered
+    scanf(fptr,"%[^\n]", ch);
+    printf("Data from the file:\n%s", ch);
     close(fptr)
     
     return 0;
